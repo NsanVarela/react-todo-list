@@ -28,15 +28,15 @@ const firstTodos = {
 
 function App() {
   
-  const [todoId, setTodoId] = useState()                  // Hook "useState" => retourne un array avec 2 elmts : elmt à modifier + fonction qui modifie l'état
-  const [todos, setTodos] = useState(firstTodos)          // ici prend en param une valeur par défaut
+  const [todoId, setTodoId] = useState() // Hook "useState" => retourne un array avec 2 elmts : elmt à modifier + fonction qui modifie l'état
+  const [todos, setTodos] = useState(firstTodos) // ici prend en param une valeur par défaut
   
   function handleStatusChange(id) {
     setTodoId(id)
 
-    const todoToModify = todos.find(todo => todo.id === id)
+    const todoToModify = todos.list.find(todo => todo.id === id)
     todoToModify.done = !todoToModify.done
-    const newTodos = todos.map(todo => (todo.id !== id ? todo : todoToModify))
+    const newTodos = todos.list.map(todo => (todo.id !== id ? todo : todoToModify))
     setTodos({list: newTodos})
   }
 

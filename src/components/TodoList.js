@@ -6,7 +6,7 @@ export default function TodoList (props) {
     const {todos, handleStatusChange} = props
     return(
         <ul>
-            {todos.map(todo => (
+            {todos.list.map(todo => (
                 <Todo 
                     key={todo.id}
                     data={todo} 
